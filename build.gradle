@@ -1,0 +1,35 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.0'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group 'org.kyle'
+version '1.0-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+    maven{
+        allowInsecureProtocol = true
+        url'http://maven.aliyun.com/nexus/content/groups/public/'
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation group: 'com.alibaba', name: 'fastjson', version: '1.1.25'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    archiveFileName = 'runProject.jar'
+    manifest {
+        attributes 'Main-Class': 'org.kyle.DemoApplication1'
+    }
+}
