@@ -20,7 +20,7 @@ public class JsonDemoController {
     public Object parase() {
         Map<String, String> map = new HashMap<>();
         map.put("id", "1");
-        map.put("name", "kyle1");
+        map.put("name", "kyle12");
         String s = JSONObject.toJSONString(map);
         Map map1 = JSONObject.parseObject(s, Map.class);
         return map1;
